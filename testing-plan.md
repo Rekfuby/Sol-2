@@ -4,6 +4,12 @@
 
 [Визуальная шпаргалка по Git](http://ndpsoftware.com/git-cheatsheet.html)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi architecto natus, totam dolore consequuntur recusandae deserunt amet cumque. Molestiae amet assumenda qui possimus facere modi dicta culpa iste, debitis accusantium.
+Виды помощников аутентификации в Git:
+
+* unset - запрашивает пароль всегда
+* cache - хранение пароля в кеше (удаляется после завершения работы)
+* store - хранение пароля в файле
+* osxkeychain - для Mac OS X
+* manager - Windows credential manager (Диспетчер учетных данных)
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, saepe. Nam magnam est quidem repellat. Dolore fugit alias praesentium, facere nemo? Modi, esse eos placeat repellat animi molestiae provident nobis.
