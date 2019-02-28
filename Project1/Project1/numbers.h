@@ -76,7 +76,7 @@ string numbers_lt_100_to_string(int number) {
 	string answer;
 	int tens = number / 10;
 	int remainder = number % 10;
-	if (tens != 0 || tens != 1) {
+	if (tens != 0 && tens != 1) {
 		switch (tens)
 		{
 		case 2: 
@@ -112,6 +112,53 @@ string numbers_lt_100_to_string(int number) {
 	}
 	else {
 		answer = numbers_lt_20_to_string(number);
+	}
+	return answer;
+}
+
+
+string numbers_lt_1000_to_string(int number) {
+	string answer;
+	int hundreds = number / 100;
+	int tens = number % 100;
+	if (hundreds != 0) {
+		switch (hundreds) {
+		case 1: 
+			answer = "סעמ";
+			break;
+		case 2: 
+			answer = "הגוסעט";
+			break;
+		case 3: 
+			answer = "ענטסעמ";
+			break;
+		case 4:
+			answer = "קועûנוסעמ";
+			break;
+		case 5: 
+			answer = "ןÿעüסמע";
+			break;
+		case 6:
+			answer = "רוסעüסמע";
+			break;
+		case 7: 
+			answer = "סולüסמע";
+			break;
+		case 8:
+			answer = "גמסולüסמע";
+			break;
+		case 9: 
+			answer = "הוגÿעüסמע";
+			break;
+		default:
+			break;
+		}
+		if (tens != 0) {
+			answer += " " + numbers_lt_100_to_string(tens);
+		}
+	}
+	else {
+		answer = numbers_lt_100_to_string(number);
 	}
 	return answer;
 }
