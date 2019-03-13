@@ -162,3 +162,31 @@ string numbers_lt_1000_to_string(int number) {
 	}
 	return answer;
 }
+
+
+string objects_less_1000_to_string(int number, string s1, string s2, string s3) {
+	string answer;
+	int remainder100 = number % 100;
+	int remainder10 = number % 10;
+	answer = numbers_lt_1000_to_string(number) + " ";
+	if (remainder100 != 11 && remainder10 == 1) {
+		answer += s1;
+	}
+	else {
+		if (!(remainder100 >= 12 && remainder100 <= 14) && remainder10 >= 2 && remainder10 <= 4) {
+			answer += s2;
+		}
+		else {
+			answer += s3;
+		}
+	}
+	return answer;
+}
+
+
+string currency_to_string(int integer_value, string si1, string si2, string si3, int decimal_value, string sd1, string sd2, string sd3) {
+	string answer;
+	answer = objects_less_1000_to_string(integer_value, si1, si2, si3) + ", ";
+	answer += objects_less_1000_to_string(decimal_value, sd1, sd2, sd3);
+	return answer;
+}
