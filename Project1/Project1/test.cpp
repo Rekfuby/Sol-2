@@ -34,8 +34,8 @@ BOOST_AUTO_TEST_CASE( test_case1 ) {
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(40) == string ("сорок"));
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(50) == string ("пятьдесят"));
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(60) == string ("шестьдесят"));
-	BOOST_TEST_CHECK(numbers_lt_100_to_string(70) == string ("семьдесять"));
-	BOOST_TEST_CHECK(numbers_lt_100_to_string(80) == string ("восемьдесять"));
+	BOOST_TEST_CHECK(numbers_lt_100_to_string(70) == string ("семьдесят"));
+	BOOST_TEST_CHECK(numbers_lt_100_to_string(80) == string ("восемьдесят"));
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(91) == string ("девяносто один"));
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(41) == string ("сорок один"));
 	BOOST_TEST_CHECK(numbers_lt_100_to_string(42) == string ("сорок два"));
@@ -53,7 +53,7 @@ BOOST_AUTO_TEST_CASE( test_case1 ) {
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(0) == string ("ноль"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(400) == string ("четыресто"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(237) == string ("двести тридцать семь"));
-	BOOST_TEST_CHECK(numbers_lt_1000_to_string(689) == string ("шестьсот восемьдесять девять"));
+	BOOST_TEST_CHECK(numbers_lt_1000_to_string(689) == string ("шестьсот восемьдесят девять"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(210) == string ("двести десять"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(205) == string ("двести пять"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(401) == string ("четыресто один"));
@@ -61,6 +61,18 @@ BOOST_AUTO_TEST_CASE( test_case1 ) {
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(100) == string ("сто"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(219) == string ("двести девятнадцать"));
 	BOOST_TEST_CHECK(numbers_lt_1000_to_string(101) == string ("сто один"));
+
+	BOOST_TEST_CHECK(objects_less_1000_to_string(101, "рубль", "рубля", "рублей") == string ("сто один рубль"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(102, "рубль", "рубля", "рублей") == string ("сто два рубля"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(999, "рубль", "рубля", "рублей") == string ("девятьсот девяносто девять рублей"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(222, "рубль", "рубля", "рублей") == string ("двести двадцать два рубля"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(514, "рубль", "рубля", "рублей") == string ("пятьсот четырнадцать рублей"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(780, "рубль", "рубля", "рублей") == string ("семьсот восемьдесят рублей"));
+	BOOST_TEST_CHECK(objects_less_1000_to_string(205, "рубль", "рубля", "рублей") == string ("двести пять рублей"));
+
+	BOOST_TEST_CHECK(currency_to_string(101, "рубль", "рубля", "рублей", 13, "копейка", "копейки", "копеек") == string ("сто один рубль, тринадцать копеек"));
+	BOOST_TEST_CHECK(currency_to_string(101, "рубль", "рубля", "рублей", 1, "копейка", "копейки", "копеек") == string ("сто один рубль, одна копейка"));
+	BOOST_TEST_CHECK(currency_to_string(101, "рубль", "рубля", "рублей", 50, "копейка", "копейки", "копеек") == string ("сто один рубль, пятьдесят копеек"));
 
 }
 

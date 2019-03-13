@@ -95,10 +95,10 @@ string numbers_lt_100_to_string(int number) {
 			answer = "רוסעüהוסÿע";
 			break;
 		case 7: 
-			answer = "סולüהוסÿעü";
+			answer = "סולüהוסÿע";
 			break;
 		case 8:
-			answer = "גמסולüהוסÿעü";
+			answer = "גמסולüהוסÿע";
 			break;
 		case 9: 
 			answer = "הוגÿםמסעמ";
