@@ -6,64 +6,64 @@ string numbers_lt_20_to_string(int number) {
 	switch (number)
 	{
 	case 0: 
-		answer = "íîëü";
+		answer = "­®«ì";
 		break;
 	case 1: 
-		answer = "îäèí";
+		answer = "®¤¨­";
 		break;
 	case 2:
-		answer = "äâà";
+		answer = "¤¢ ";
 		break;
 	case 3: 
-		answer = "òğè";
+		answer = "âà¨";
 		break;
 	case 4:
-		answer = "÷åòûğå";
+		answer = "ç¥âëà¥";
 		break;
 	case 5: 
-		answer = "ïÿòü";
+		answer = "¯ïâì";
 		break;
 	case 6:
-		answer = "øåñòü";
+		answer = "è¥áâì";
 		break;
 	case 7: 
-		answer = "ñåìü";
+		answer = "á¥¬ì";
 		break;
 	case 8:
-		answer = "âîñåìü";
+		answer = "¢®á¥¬ì";
 		break;
 	case 9: 
-		answer = "äåâÿòü";
+		answer = "¤¥¢ïâì";
 		break;
 	case 10:
-		answer = "äåñÿòü";
+		answer = "¤¥áïâì";
 		break;
 	case 11: 
-		answer = "îäèííàäöàòü";
+		answer = "®¤¨­­ ¤æ âì";
 		break;
 	case 12:
-		answer = "äâåíàäöàòü";
+		answer = "¤¢¥­ ¤æ âì";
 		break;
 	case 13: 
-		answer = "òğèíàäöàòü";
+		answer = "âà¨­ ¤æ âì";
 		break;
 	case 14:
-		answer = "÷åòûğíàäöàòü";
+		answer = "ç¥âëà­ ¤æ âì";
 		break;
 	case 15: 
-		answer = "ïÿòíàäöàòü";
+		answer = "¯ïâ­ ¤æ âì";
 		break;
 	case 16:
-		answer = "øåñòíàäöàòü";
+		answer = "è¥áâ­ ¤æ âì";
 		break;
 	case 17: 
-		answer = "ñåìíàäöàòü";
+		answer = "á¥¬­ ¤æ âì";
 		break;
 	case 18:
-		answer = "âîñåìíàäöàòü";
+		answer = "¢®á¥¬­ ¤æ âì";
 		break;
 	case 19: 
-		answer = "äåâÿòíàäöàòü";
+		answer = "¤¥¢ïâ­ ¤æ âì";
 		break;
 	default:
 		break;
@@ -80,28 +80,28 @@ string numbers_lt_100_to_string(int number) {
 		switch (tens)
 		{
 		case 2: 
-			answer = "äâàäöàòü";
+			answer = "¤¢ ¤æ âì";
 			break;
 		case 3: 
-			answer = "òğèäöàòü";
+			answer = "âà¨¤æ âì";
 			break;
 		case 4:
-			answer = "ñîğîê";
+			answer = "á®à®ª";
 			break;
 		case 5: 
-			answer = "ïÿòüäåñÿò";
+			answer = "¯ïâì¤¥áïâ";
 			break;
 		case 6:
-			answer = "øåñòüäåñÿò";
+			answer = "è¥áâì¤¥áïâ";
 			break;
 		case 7: 
-			answer = "ñåìüäåñÿò";
+			answer = "á¥¬ì¤¥áïâ";
 			break;
 		case 8:
-			answer = "âîñåìüäåñÿò";
+			answer = "¢®á¥¬ì¤¥áïâ";
 			break;
 		case 9: 
-			answer = "äåâÿíîñòî";
+			answer = "¤¥¢ï­®áâ®";
 			break;
 		default:
 			break;
@@ -124,31 +124,31 @@ string numbers_lt_1000_to_string(int number) {
 	if (hundreds != 0) {
 		switch (hundreds) {
 		case 1: 
-			answer = "ñòî";
+			answer = "áâ®";
 			break;
 		case 2: 
-			answer = "äâåñòè";
+			answer = "¤¢¥áâ¨";
 			break;
 		case 3: 
-			answer = "òğèñòî";
+			answer = "âà¨áâ®";
 			break;
 		case 4:
-			answer = "÷åòûğåñòî";
+			answer = "ç¥âëà¥áâ®";
 			break;
 		case 5: 
-			answer = "ïÿòüñîò";
+			answer = "¯ïâìá®â";
 			break;
 		case 6:
-			answer = "øåñòüñîò";
+			answer = "è¥áâìá®â";
 			break;
 		case 7: 
-			answer = "ñåìüñîò";
+			answer = "á¥¬ìá®â";
 			break;
 		case 8:
-			answer = "âîñåìüñîò";
+			answer = "¢®á¥¬ìá®â";
 			break;
 		case 9: 
-			answer = "äåâÿòüñîò";
+			answer = "¤¥¢ïâìá®â";
 			break;
 		default:
 			break;
@@ -169,8 +169,17 @@ string objects_less_1000_to_string(int number, string s1, string s2, string s3) 
 	int remainder100 = number % 100;
 	int remainder10 = number % 10;
 	answer = numbers_lt_1000_to_string(number) + " ";
+	if (s1.back() == ' ') {
+		if (answer.substr(4) == "®¤¨­ ") {
+			answer = "®¤­  ";
+		}
+		if (answer.substr(3) == "¤¢  ") {
+			answer = "¤¢¥ "; 
+		}
+	}
 	if (remainder100 != 11 && remainder10 == 1) {
 		answer += s1;
+		
 	}
 	else {
 		if (!(remainder100 >= 12 && remainder100 <= 14) && remainder10 >= 2 && remainder10 <= 4) {
